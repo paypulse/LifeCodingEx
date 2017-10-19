@@ -4,13 +4,14 @@
     <meta charset ="utf-8" />
   </head>
   <body>
-    <!---javascript--->
+    <h1>Javascript</h1>
     <script type="text/javascript">
-      document.write("Hello world");
+      document.write(1==1);
     </script>
-
+    <h1>PHP</h1>
     <?php
-        echo "Hello World";
+      var_dump(1==1);
+
      ?>
 
   </body>
