@@ -10,6 +10,7 @@
       <!--- 사용자가 정보를 입력 ---->
       <input type="text" name="password">
       <!---제출 버튼을 만들어주는  tag ---->
+
       <input type="submit">
     </form>
   </body>
