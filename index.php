@@ -1,3 +1,17 @@
+<?php
+  //DB 접속
+  $conn=mysqli_connect("localhost","root",bg2759);
+
+  //DB 선택
+  mysqli_select_db($conn,'opentutorials');
+
+  //DB 조회
+  mysqli_query($conn,'SELECT*FROM topic');
+
+  //결과 출력
+  
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
