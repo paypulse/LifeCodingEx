@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset ="utf-8" />
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://localhost/LifeCoding/css/style.css">
   </head>
   <body id="target">
-      <!--네비게이션-->
-      <!--<h1>javascript</h1> -->
-      <header>
-        <h1><a href="http://localhost/LifeCoding/page_html.html"> Java script</a></h1>
-        <!--다른 contents 들을 넣을 수 있다. -->
-      </header>
-      <div id="gbtn">
-        <!--<input type="button" value="white" onclick="whiteClick()"/>
-        <input type="button" value="black" onclick="blackClick()"/> -->
-        <input type="button" value="white" id="whiteBtn">
-        <input type="button" value="black" id="blackBtn">
-      </div>
-      <nav>
-       <ol>
-         <li><a href="http://localhost/LifeCoding/page_html.html">JavaScript란?</a></li>
-         <li><a href="http://localhost/LifeCoding/page_vc.html">변수와 상수</a></li>
-         <li><a href="http://localhost/LifeCoding/page_op.html">연산자</a></li>
-       </ol>
-     </nav>
+    <header>
+      <img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" alt="생활 코딩">
+      <h1> <a href="http://localhost/LifeCoding/index.php">Java Script</a></h1>
+    </header>
+    <nav>
+      <ol>
+        <?php
+            echo file_get_contents("list.txt");
+        ?>
+      </ol>
+    </nav>
+    <div id="control">
+      <input type="button" value="white" onclick="document.getElementById('target').className='white'"/>
+      <input type="button" value="black" onclick="document.getElementById('target').className='black'"/>
+    </div>
+    <article>
+      <?php
 
+        if(empty($_GET['id'])==false){
+          echo file_get_contents($_GET['id'].".txt");
+        }
+       ?>
+    </article>
   </body>
-  <script type="text/javascript" src="http://localhost/LifeCoding/javascript/scriptEx.js"></script>
-
 </html>
