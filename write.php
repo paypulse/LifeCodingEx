@@ -75,7 +75,6 @@
           echo '<h2>'.$row['title'].'</h2>';
           echo $row['description'];
         }
-
        ?>
     </article>
   </body>
