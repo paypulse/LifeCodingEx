@@ -63,7 +63,7 @@
       <a href="http://localhost/LifeCoding/write.php">쓰기</a>
     </div>
     <article>
-      <form action="process.php" method="post">
+      <form action="process.php" method="POST">
         <p>
           제목 : <input type="text" name="title">
         </p>
@@ -74,7 +74,7 @@
           본문 : <textarea name="description"></textarea>
         </p>
         <input type="submit" name="name">
-        
+
       </form>
     </article>
   </body>

@@ -69,11 +69,15 @@
           echo file_get_contents($_GET['id'].".txt");
         }*/
         if(empty($_GET['id'])===false){
-          $sql ="SELECT * FROM topic WHERE id= ".$_GET['id'];
+          $sql ="select topic.id,title,name,description from topic left join user on topic.author = user.id where topic.id=".$_GET['id'];
+          //$sql ="SELECT * FROM topic WHERE id= ".$_GET['id'];
           $result=mysqli_query($conn, $sql);
           $row = mysqli_fetch_assoc($result);
           echo '<h2>'.$row['title'].'</h2>';
+          //author에 대한 정보
+          echo '<p>'.$row['name'].'</p>';
           echo $row['description'];
+          
         }
 
        ?>
