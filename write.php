@@ -63,19 +63,19 @@
       <a href="http://localhost/LifeCoding/write.php">쓰기</a>
     </div>
     <article>
-      <?php
-      /*
-        if(empty($_GET['id'])==false){
-          echo file_get_contents($_GET['id'].".txt");
-        }*/
-        if(empty($_GET['id'])===false){
-          $sql ="SELECT * FROM topic WHERE id= ".$_GET['id'];
-          $result=mysqli_query($conn, $sql);
-          $row = mysqli_fetch_assoc($result);
-          echo '<h2>'.$row['title'].'</h2>';
-          echo $row['description'];
-        }
-       ?>
+      <form action="process.php" method="post">
+        <p>
+          제목 : <input type="text" name="title">
+        </p>
+        <p>
+          작성자 : <input type="text" name="author">
+        </p>
+        <p>
+          본문 : <textarea name="description"></textarea>
+        </p>
+        <input type="submit" name="name">
+        
+      </form>
     </article>
   </body>
 </html>
