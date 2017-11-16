@@ -52,7 +52,9 @@
             */
             //DB와 연동
             while($row=mysqli_fetch_assoc($result)){
-              echo '<li><a href="http://localhost/LifeCoding/index.php?id='.$row['id'].'">'.$row['title'].'</a></li>'."\n";
+              echo '<li><a href="http://localhost/LifeCoding/index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
+
+
             }
         ?>
       </ol>
@@ -73,11 +75,11 @@
           //$sql ="SELECT * FROM topic WHERE id= ".$_GET['id'];
           $result=mysqli_query($conn, $sql);
           $row = mysqli_fetch_assoc($result);
-          echo '<h2>'.$row['title'].'</h2>';
+          echo '<h2>'.htmlspecialchars($row['title']).'</h2>';
           //author에 대한 정보
-          echo '<p>'.$row['name'].'</p>';
-          echo $row['description'];
-          
+          echo '<p>'.htmlspecialchars($row['name']).'</p>';
+          echo strip_tags($row['description'], '<a><h1><h2><h3><h4><h5><ul><ol><li>');
+
         }
 
        ?>

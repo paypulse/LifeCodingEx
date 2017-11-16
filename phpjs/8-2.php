@@ -7,7 +7,7 @@
     <?php
     //$_GET["password"]; php 문법에 해당
       $password = $_GET["password"];
-      if($password == 1111)
+      if($password == "1111")
       {
         echo "안녕하세요";
       }else{
