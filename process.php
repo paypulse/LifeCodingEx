@@ -1,7 +1,7 @@
 <?php
-  $conn=mysqli_connect("localhost","root",'bg2759');
-  //DB 선택
-  mysqli_select_db($conn,'opentutorials');
+  require("config/config.php");
+  require("lib/db.php");
+  $conn=db_init($config["host"],$config["duser"],$config["dpw"],$config["dname"]);
   $sql = "select * from user where name='".$_POST['author']."'";
   $result= mysqli_query($conn, $sql);
   //var_dump($result); //$result 안의 값은 object이다.

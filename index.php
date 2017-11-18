@@ -1,10 +1,7 @@
 <?php
-  //DB 접속
-  $conn=mysqli_connect("localhost","root",'bg2759');
-
-  //DB 선택
-  mysqli_select_db($conn,'opentutorials');
-
+  require("config/config.php");
+  require("lib/db.php");
+  $conn=db_init($config["host"],$config["duser"],$config["dpw"],$config["dname"]);
   //DB 조회
   $result =mysqli_query($conn,'SELECT*FROM topic');
 
