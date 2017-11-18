@@ -4,7 +4,7 @@
   $conn=db_init($config["host"],$config["duser"],$config["dpw"],$config["dname"]);
   //DB 조회
   $result =mysqli_query($conn,'SELECT*FROM topic');
-
+  
   //결과 출력
 //  $row = mysqli_fetch_assoc($result);
 /*  echo $row['id'];
